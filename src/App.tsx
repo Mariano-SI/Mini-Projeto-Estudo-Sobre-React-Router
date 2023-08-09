@@ -8,6 +8,7 @@ import Header from "./Components/Header/Header"
 import Footer from "./Components/Footer/Footer"
 import './App.css'
 import Contact from "./Components/Contact/Contact"
+import ProductPage from "./Components/ProductPage/ProductPage"
 
 // https://ranekapi.origamid.dev/json/api/produto/notebook
 function App(): JSX.Element {
@@ -20,6 +21,7 @@ function App(): JSX.Element {
         <div className="content">
           <Routes>
             <Route path="/" element={<Products/>}/>
+            <Route path="produto/:id" element={<ProductPage/>}/>
             <Route path="contato" element={<Contact/>}/>
           </Routes>
         </div>
