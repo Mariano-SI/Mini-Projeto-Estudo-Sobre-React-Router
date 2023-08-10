@@ -20,9 +20,7 @@ const Products = () => {
   useEffect( ()=>{
     getProducts()
   },[])
-  useEffect( ()=>{
-    console.log(products)
-  },[products])
+
 
   if(products.length === 0) return null;
   return (

@@ -30,25 +30,27 @@ const ProductPage = ():JSX.Element => {
     },[])
     
     function decideContent(){
-        if(loading) return <p>Carregando...</p>
+        if(loading) return <div className='loading'></div>
         if(error) return <p>{error}</p>
         if(productData === null) return null;
         return(
-            <section className='productDiv leftAnimation'>
+            <>
                 <Head title={productData.nome} description={productData.descricao}/>
-                {productData.fotos.map((photo)=>(
-                    <img key={photo.src} src={photo.src} alt={photo.titulo} />
-                ))}
+                <div>
+                    {productData.fotos.map((photo)=>(
+                        <img className='productImages' key={photo.src} src={photo.src} alt={photo.titulo} />
+                    ))}
+                </div>
                 <div>
                     <h1>{productData.nome}</h1>
                     <span className='preco'>R$ {productData.preco}</span>
                     <p className='descricao'>{productData.descricao}</p>
                 </div>
-            </section>
+            </>
         )
     }
     return(
-        <ProductStyled>
+        <ProductStyled className='leftAnimation'>
            {decideContent()}
         </ProductStyled>
     )

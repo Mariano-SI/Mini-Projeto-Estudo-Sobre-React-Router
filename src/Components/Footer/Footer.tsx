@@ -1,10 +1,13 @@
 import React from 'react'
+import { FooterStyled } from './Footer.style'
 
 
 
 const Footer = () => {
   return (
-    <footer>Footer</footer>
+    <FooterStyled>
+      <p>Alguns direitos reservados</p>
+    </FooterStyled>
   )
 }
 
